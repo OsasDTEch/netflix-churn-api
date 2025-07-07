@@ -53,8 +53,9 @@ def preprocess_input(df):
     df[numeric_cols] = scaler.transform(df[numeric_cols])
     return df
 @app.get("/")
-def home():
-    return {"message": "Welcome to the Churn Prediction API. Visit /docs to test it."}
+def root():
+    return {"message": "Churn Prediction API is live and ready!"}
+
 
 @app.post("/predict")
 def predict(customer: CustomerData):
